@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+            let a=Number(document.getElementById("no1").value )   
+            let b=Number(document.getElementById("no2").value )
+            d1.innerHTML=`${a} + ${b} = ${a+b}`
+            d2.innerHTML=`${a} - ${b} = ${a-b}`
+            d3.innerHTML=`${a} * ${b} = ${a*b}`
+            d4.innerHTML=`${a} / ${b} = ${a/b}`
+            msg.innerHTML="OR";
+            let str =`${a} + ${b}=${a+b} <br>`;
+            str =str+`${a} - ${b}=${a-b} <br>`;
+            str =str+`${a} * ${b}=${a*b} <br>`;
+            str =str+`${a} / ${b}=${a/b} <br>`;
+            d.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="number" required id ="no1" placeholder="enter number 1"><br><br>
+    <input type="number" required id ="no2" placeholder="enter number 2"><br><br>
+    <button onclick="f1()">submit</button>
+    <hr>
+    <div id ="d1"></div>
+    <div id ="d2"></div>
+    <div id ="d3"></div>
+    <div id ="d4"></div>
+
+    <div id="msg"></div>
+
+    <div id="d"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <input type="number" id="score" placeholder="Enter the score">
+    <button onclick="f1()">Submit</button>
+    <hr>
+    <div id="msg"></div>
+
+    <script>
+        function f1() {
+            let scr = Number(document.getElementById("score").value);  // Convert input to number
+            let msg = document.getElementById("msg");  // Reference msg div
+
+            if (scr > 90) {
+                msg.innerHTML = "Grade A";
+            } else if (scr > 70) {
+                msg.innerHTML = "Grade B";
+            } else if (scr > 60) {
+                msg.innerHTML = "Grade C";
+            } else if (scr > 40) {
+                msg.innerHTML = "Grade D";
+            } else {
+                msg.innerHTML = "Grade F";
+            }
+        }
+    </script>
+</body>
+</html>

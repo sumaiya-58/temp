@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+        let str1=document.getElementById("name").value;
+        let str2=document.getElementById("n").value;
+        let str3=document.getElementById("q").value;
+        let str4=document.getElementById("s").value;
+        let str = `${str1} | ${str2} | ${str3} | ${str4}`
+        string1.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="name" placeholder="enter name"><br><br>
+    <input type="number" id="n" placeholder="enter age"><br><br>
+    <input type="text" id="q" placeholder="enter qualification"><br><br>
+    <input type="text" id="s" placeholder="enter state"><br><br>
+    <button onclick="f1()">submit</button>
+    <div id="string1"></div>
+</body>
+</html>

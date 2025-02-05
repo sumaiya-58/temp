@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+            let a=document.getElementById("n").value;
+            let str1=`${a} * 0 = ${a*0}<br>`
+            
+            for(let i=1;i<=10;i++){
+                str1=str1+`<br>${a} * ${i} = ${a*i}<br>` 
+            }
+
+            table.innerHTML=str1;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="n" placeholder="enter number"><br><br>
+    <button onclick="f1()" >submit</button><br>
+    <div id="table"></div>
+</body>
+</html>
