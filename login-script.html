@@ -47,13 +47,13 @@
             let username=document.getElementById("name").value
             let password=document.getElementById("pwd").value
             if (username =="" || password=="") {
-                msg.innerHTML=""
+                msg.innerHTML="fill the details"
             }
-            if (username !=="john@gmail.com" || password!=="1234") {
-                msg.innerHTML="ACCESS DENIED"
+            else if (username !=="john@gmail.com" || password!=="1234") {
+                msg.innerHTML="WELCOME JOHN"
             }
             else{
-                msg.innerHTML="WELCOME JOHN"
+                msg.innerHTML="ACCESS DENIED"
             }
         }
     </script>
