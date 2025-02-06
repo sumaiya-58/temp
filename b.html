@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+            let s1=document.getElementById("email").value
+            let s2=document.getElementById("pwd").value
+            /*let s3=doctument.getElementById("email").value*/
+            let s3 =`${s1} |${s2}`
+            msg.innerHTML=s3
+        }
+    </script>
+</head>
+<body>
+    <h2>Login</h2>
+            <input type="text" id="email" placeholder="enter email"><br>
+            <input type="password" id="pwd" placeholder="enter password"><br>
+            <button onclick="f1()">LogIn</button>
+            <div id="msg"></div>
+       
+</body>
+</html>
