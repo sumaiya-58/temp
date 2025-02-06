@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            border: 2px solid silver;
+            padding: 20px;
+            width: 600px;
+            font-size: xx-large;
+            border-radius: 4px;
+        }
+        .con {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        .box {
+            border: 4px solid silver;
+            width: 50%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: xx-large;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }    
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: large;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        let users = []; // Define users array globally
+
+        function f1() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let pwd = document.getElementById("pwd").value;
+            let dob = document.getElementById("dob").value;
+
+            let user = {
+                name: name,
+                email: email,
+                pwd: pwd,
+                dob: dob
+            };
+
+            users.push(user);
+
+            let str = "";
+            for (let i = 0; i < users.length; i++) {
+                str += `<div>${users[i].name} | ${users[i].email} | ${users[i].pwd} | ${users[i].dob}</div><br>`;
+            }
+
+            document.getElementById("msg").innerHTML = str; // Fix msg reference
+        }
+    </script>
+</head>
+<body>
+    <div class="con">
+        <div class="box">
+            <h2>Register</h2>
+            <input type="text" id="name" placeholder="Enter name"><br><br>
+            <input type="text" id="email" placeholder="Enter email"><br><br>
+            <input type="password" id="pwd" placeholder="Enter password"><br><br>
+            <input type="date" id="dob"><br><br>
+            <button onclick="f1()">Register</button>
+            <div id="msg"></div>
+        </div>   
+    </div>
+</body>
+</html>
