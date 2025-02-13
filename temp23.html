@@ -12,22 +12,62 @@
       ];
       const cart = {};
       const addToCart = (id) => {
+        /*const score={};
+        score["maths"]=95;
+        score["maths"]+=2;
+        console.log(score);
+*/
         cart[id] = 1;
         console.log(cart);
         showCart();
+        add(id);
+        sub(id);
+        
       };
+      const add=(id)=>{
+          cart[id]+=1
+          showCart();
+          //console.log(cart)
 
+        }
+        const sub=(id)=>{
+          cart[id]=cart[id]-1;
+          cart[id]<1&& delete cart[id];
+          showCart();
+          console.log(cart)
+        }
+        
+        const showTotal=()=>{
+          let total=products.reduce((sum,value)=> {
+           /*if  (cart[value.id])
+           return sum + value.price * cart[value.id];   
+           }return sum;*/
+
+          return sum + value.price * (cart[value.id]?cart[value.id]:0);
+
+          },0);
+          divtotal.innerHTML=total;
+        };
       const showCart = () => {
         let str = "";
+
         products.map((value) => {
           if (cart[value.id]) {
             str += `
-            <li>${value.name}-$${value.price}-<button>-</button>${cart[value.id]}<button>+</button>-${value.price*cart[value.id]}</li>
+            <li>${value.name}-$${value.price}-<button onclick='sub(${value.id})'>-</button>${cart[value.id]}<button onclick='add(${value.id})'>+</button>-${value.price*cart[value.id]}</li>
             `;
           }
         });
         divCart.innerHTML = str;
+        let count=Object.keys(cart).length
+        item.innerHTML=count;
+        showTotal()
       };
+      const displayCart=()=>
+      {
+        divcartblock.style.display="block"
+      }
+
       const showProducts = () => {
         let str = "";
         products.map((value) => {
@@ -40,11 +80,20 @@
     </script>
   </head>
   <body onload="showProducts()">
+    
     <h1>My Store</h1>
+    <h3 onclick='displayCart()'>Cart:<spam  id ="item"></spam></h3>
     <hr />
     <h3>Products</h3>
     <div id="divProducts"></div>
+    <div id="divcartblock" style="display:none">
     <h3>My Cart</h3>
     <div id="divCart"></div>
+  </div>
+    <h3>Total Amount</h3>
+    <div id="divtotal"></div>
+
   </body>
 </html>
+
+
