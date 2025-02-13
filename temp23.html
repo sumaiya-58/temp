@@ -67,7 +67,9 @@
       {
         divcartblock.style.display="block"
       }
-
+      const hidecart=()=>{
+        divcartblock.style.display="none"
+      }
       const showProducts = () => {
         let str = "";
         products.map((value) => {
@@ -90,9 +92,13 @@
     <h3>My Cart</h3>
     <div id="divCart"></div>
   </div>
+  <button onclick='hidecart()'>hidecart</button>
+  <br>
+  <br>
     <h3>Total Amount</h3>
+    
     <div id="divtotal"></div>
-
+    >
   </body>
 </html>
 
