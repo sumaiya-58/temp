@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        
+    <script>
+        //document.write(doj)
+        //document.write(doj.getDate())
+        //document.write(doj.getDay())
+        //document.write(doj.getFullYear())
+        function f1(){
+         let doj=new Date(document.getElementById("doj").value)
+        if (doj.grtDay()==3){
+            msg.innerHtml="Sorry!we are claosed today";
+        }
+        else{
+            msg.innerHtml="Welcome"
+        }
+         }
+    </script>
+</head>
+<body>
+    <input type="date" id ="doj"><br>
+    <button onclick="f1()">submit</button>
+    <div id="msg" ></div>
+</body>
+</html>
